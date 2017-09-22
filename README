@@ -1,0 +1,7 @@
+$ mkdir bzr; cd bzr
+bzr$ bzr branch lp:process-cpp; cd process-cpp
+bzr/process-cpp$ git init
+bzr/process-cpp$ bzr fast-export --plain . | git fast-import
+bzr/process-cpp$ git remote add vicamo git@github.com:vicamo/ppa_process-cpp.git
+bzr/process-cpp$ git fetch vicamo
+bzr/process-cpp$ git rebase -i vicamo/master
